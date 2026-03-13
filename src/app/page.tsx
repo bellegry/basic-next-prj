@@ -1,28 +1,17 @@
-/*
-"use client";
-
-import { useArrival } from "@/features/subway/hooks/useArrival";
-
-export default function Home() {
-  useArrival("서울역");
-  return (
-    <main>
-      <div>지하철 정보</div>
-    </main>
-  );
-}
-*/
-
 "use client";
 
 import { useEffect } from "react";
-import { getRealTimeArrival } from "@/lib/subway";
+import { getRealTimeArrival } from "@/lib/constants/subway";
+import { Subway } from "@/types/subwayTypes";
 
 export default function TestPage() {
   useEffect(() => {
     async function test() {
       const data = await getRealTimeArrival("서울");
-      console.log(data);
+      const firstLineData = data.realtimeArrivalList?.filter((item: Subway) => {
+        return item.subwayId === 1001; // 1호선 데이터만 필터링
+      });
+      console.log(firstLineData);
     }
 
     test();

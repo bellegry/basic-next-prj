@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { getRealTimeArrival } from "@/lib/subway";
+import { getRealTimeArrival } from "@/lib/constants/subway";
 import { useSubwayStore } from "@/store/subwayStore";
 
 export function useArrival(station: string) {
