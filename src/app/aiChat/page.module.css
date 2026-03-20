@@ -1,0 +1,47 @@
+.layout {
+  background-color: #f9fafb;
+  height: 100svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: clip;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 50px;
+  z-index: 1;
+  padding: 0 12px;
+  background-color: #b97272;
+}
+.main {
+  flex: 1;
+  overflow: hidden;
+  padding-top: 50px;
+}
+.thread {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.thread_core {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 20px 44px;
+  overflow-x: hidden;
+  background-color: #b9b472;
+  .box {
+    height: 300px;
+    background: lightgray;
+    margin-bottom: 10px;
+  }
+}
+.thread_controller {
+  height: 100px;
+  position: relative;
+  background-color: #72b995;
+}
